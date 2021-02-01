@@ -2433,8 +2433,6 @@ namespace libtorrent {
 #ifndef TORRENT_DISABLE_LOGGING
 			peer_log(peer_log_alert::info, "INVALID_REQUEST", "incoming request queue full %d"
 				, int(m_requests.size()));
-			peer_log(peer_log_alert::outgoing_message, "REJECT_PIECE", "piece: %d s: %x l: %x too many requests"
-				, static_cast<int>(r.piece), r.start, r.length);
 #endif
 			write_reject_request(r);
 			return;
